@@ -1,0 +1,5 @@
+server:
+  port: 8081
+
+swagger:
+  show: true #线上环境应该把接口文档关闭
