@@ -5,8 +5,8 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties("example.service")
 public class ExampleProperties {
 
-    private String prefix="111";
-    private String suffix="222";
+    private String prefix = "111";
+    private String suffix = "222";
 
     public String getPrefix() {
         return prefix;

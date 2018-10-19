@@ -1,3 +1,5 @@
+group = 'com.github.huweijian5'
+
 buildscript {
 	ext {
 		springBootVersion = '2.0.6.RELEASE'
@@ -17,7 +19,7 @@ apply plugin: 'io.spring.dependency-management'
 apply plugin: 'maven-publish'
 
 group = 'com.example'
-version = '1.0.0'
+version = '1.0.1'
 sourceCompatibility = 1.8
 
 repositories {
@@ -28,27 +30,26 @@ repositories {
 dependencies {
 	//implementation('org.springframework.boot:spring-boot-starter')
 	implementation('org.springframework.boot:spring-boot-autoconfigure')
-	//annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
-	compileOnly  "org.springframework.boot:spring-boot-configuration-processor"
+	compileOnly  ("org.springframework.boot:spring-boot-configuration-processor")
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
 
 //https://docs.spring.io/spring-boot/docs/2.0.6.RELEASE/reference/html/configuration-metadata.html#configuration-metadata-annotation-processor
 compileJava.dependsOn(processResources)
 
-publishing {
-	publications {
-		mavenJava(MavenPublication) {
-			groupId 'com.example'
-			artifactId 'example-spring-boot-starter'
-			version '1.0.02'
-
-			from components.java
-			// more goes in here
-		}
-	}
-
-	repositories {
-		mavenLocal()
-	}
-}
+//publishing {
+//	publications {
+//		mavenJava(MavenPublication) {
+//			groupId 'com.example'
+//			artifactId 'example-spring-boot-starter'
+//			version '1.0.3'
+//
+//			from components.java
+//			// more goes in here
+//		}
+//	}
+//
+//	repositories {
+//		mavenLocal()
+//	}
+//}
