@@ -1,4 +1,2 @@
-# grpc-demo
-* grpcs为服务端
-* grpcc为客户端
-* 测试时先启动服务端的Main函数，再运行客户端的HelloWorldClient
+# springboot工程示例
+* 一些springboot常见组件的示例工程，可以参考帮助快速开发
