@@ -3,3 +3,9 @@ server:
 
 swagger:
   show: true #线上环境应该把接口文档关闭
+
+example:
+  service:
+    enabled: true
+    prefix: aaa
+    suffix: 222

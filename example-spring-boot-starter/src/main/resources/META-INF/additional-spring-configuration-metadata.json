@@ -1,0 +1,21 @@
+{
+  "properties": [
+    {
+      "sourceType": "com.example.examplespringbootstarter.bean.config.ExampleProperties",
+      "name": "example.service.prefix",
+      "type": "java.lang.String",
+      "description": "Description for example.service.prefix."
+    },
+    {
+      "sourceType": "com.example.examplespringbootstarter.bean.config.ExampleProperties",
+      "name": "example.service.enable",
+      "type": "java.lang.String",
+      "description": "Description for example.service.enable."
+    },
+    {
+      "sourceType": "com.example.examplespringbootstarter.bean.config.ExampleProperties",
+      "name": "example.service.suffix",
+      "type": "java.lang.String",
+      "description": "Description for example.service.suffix."
+    }
+  ] }

@@ -1,0 +1,2 @@
+# Auto Configure,存在多个以英文逗号隔开
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.example.examplespringbootstarter.autoconfigure.ExampleAutoConfigure
