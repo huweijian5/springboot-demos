@@ -1,0 +1,10 @@
+spring:
+  redis:
+    host: 172.16.11.192
+    port: 6379
+    database: 4 #0开始
+    # 开启自定义配置后以下会失效
+  cache:
+    redis:
+      key-prefix: prefix-
+      use-key-prefix: true
