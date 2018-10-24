@@ -21,6 +21,7 @@ import java.util.Map;
 @CacheConfig(cacheNames = "test")//@CacheConfig是一个类级别的注解，允许共享缓存的名称、KeyGenerator、CacheManager 和CacheResolver。该操作会被覆盖
 public class CacheDao {
     Logger logger = LoggerFactory.getLogger(this.getClass());
+    //为了示例用Map模拟数据库保存，实际上应该是跟数据库交互
     public static Map<Integer, Test> map = new HashMap<>();
 
 

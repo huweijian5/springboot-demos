@@ -2,6 +2,7 @@ package com.example.cache;
 
 import com.example.cache.dao.CacheDao;
 import com.example.cache.service.CacheService;
+import com.example.cache.service.RedisService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -39,21 +40,21 @@ public class CacheApplicationTests {
 
         test.setContent("hello world");
         CacheDao.map.put(1, test);
-        test=new com.example.cache.bean.Test(2,"hello world");
+        test = new com.example.cache.bean.Test(2, "hello world");
         CacheDao.map.put(2, test);
         logger.info("now map  :" + CacheDao.map);
 
         test = cacheService.get(1);
         logger.info("get 1:" + test);
 
-        test=CacheDao.map.get(1);
+        test = CacheDao.map.get(1);
         cacheService.modify(test);
         logger.info("modify 1:" + test);
 
         test = cacheService.get(1);
         logger.info("get 1:" + test);
 
-        test=CacheDao.map.remove(1);
+        test = CacheDao.map.remove(1);
 
         logger.info("now map  :" + CacheDao.map);
 
@@ -82,5 +83,23 @@ public class CacheApplicationTests {
         logger.info("get 3:" + test);
 
     }
+
+    @Autowired
+    RedisService redisService;
+
+    @Test
+    public void redis() {
+        redisService.setString("redis","aaaa");
+        logger.info("save redis->aaaa");
+        String value=redisService.getString("redis");
+        logger.info("get redis:"+value);
+
+        com.example.cache.bean.Test t=new com.example.cache.bean.Test(123,"aaa");
+        redisService.setObj("test",t);
+        logger.info("save test:"+t.toString());
+        t=redisService.getObj("test");
+        logger.info("get test:"+t.toString());
+    }
+
 
 }

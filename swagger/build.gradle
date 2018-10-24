@@ -33,6 +33,4 @@ dependencies {
 	//https://github.com/xiaoymin/Swagger-Bootstrap-UI
 	implementation('com.github.xiaoymin:swagger-bootstrap-ui:1.8.5')
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
-
-	implementation('com.example:example-spring-boot-starter:1.0.02')
 }
