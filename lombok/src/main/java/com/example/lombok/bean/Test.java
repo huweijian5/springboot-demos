@@ -1,8 +1,5 @@
 package com.example.lombok.bean;
 
-import com.alibaba.fastjson.JSON;
-import com.example.lombok.bean.Car;
-import com.example.lombok.bean.User;
 import lombok.Cleanup;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
@@ -10,7 +7,6 @@ import lombok.val;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.List;
 
 @Slf4j
 //@Log

@@ -1,0 +1,10 @@
+server:
+  port: 8081
+
+store:
+  root_path: C:/Users/huweijian/Desktop/rentHouse/ #文件存储根目录
+  access_dir: images #url映射路径，此处更改则返回的url会随之变化
+spring:
+  servlet:
+    multipart:
+      max-file-size: 20 # 单位MB
