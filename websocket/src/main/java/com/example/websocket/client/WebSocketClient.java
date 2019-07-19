@@ -16,7 +16,10 @@ public class WebSocketClient {
     public void onOpen(Session session) {
         Log.info("成功连接到服务端");
         try {
-            session.getBasicRemote().sendText("hello server,first meeting.");
+            //测试文本发送
+            //session.getBasicRemote().sendText("hello server,first meeting.");
+            //测试二进制发送
+            session.getBasicRemote().sendBinary( ByteBuffer.wrap("hello server,first meeting.".getBytes()));
         } catch (IOException e) {
             e.printStackTrace();
         }
