@@ -51,16 +51,35 @@ public class WebSocketServer {
     }
 
     /**
-     * 收到客户端消息后调用的方法
+     * 接收文本数据，注意接收文本和二进制是分开的，二进制的数据不会调到这里
      *
      * @param message 客户端发送过来的消息
      */
-    @OnMessage
-    public void onMessage(String message, Session session) {
+    @OnMessage(maxMessageSize=5_000_000)
+    public void onMessage(String message,Session session) {
         String user = session.getPathParameters().get("username");
-        Log.info("收到来自客户端 " + user + " 的消息:" + message);
+        Log.info("收到来自客户端 " + user + " 的文本消息:" + message);
         try {
             session.getBasicRemote().sendText(message);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    /**
+     * 接收二进制数据，注意接收文本和二进制是分开的，文本的数据不会调到这里
+     * 注意maxMessageSize如果不设置的话，那默认是8KB,只要超过这个大小，那么消息便无法进到这里
+     * 并且没有任何提示信息，因此这个坑要注意些
+     * @param messages
+     * @param session
+     */
+    @OnMessage(maxMessageSize=5_000_000)
+    public void onMessage(byte[] messages, Session session)  {
+        String user = session.getPathParameters().get("username");
+        Log.info("收到来自客户端 " + user + " 的二进制消息:" + messages);
+        try {
+            session.getBasicRemote().sendBinary(ByteBuffer.wrap(messages));
         } catch (IOException e) {
             e.printStackTrace();
         }
